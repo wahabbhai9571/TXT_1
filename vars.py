@@ -4,7 +4,7 @@ from os import environ
 # API Configuration
 API_ID = int(os.environ.get("API_ID", "25405777"))
 API_HASH = os.environ.get("API_HASH", "6bff46327fffc7e03fa30a1ed19c5ce0")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8324823786:AAGPBfwH-EmmLmw3M-h9i4m5wqZ_pk1rFAQ")
 
 CREDIT = os.environ.get("CREDIT", "〱wahab▕")
 # MongoDB Configuration
@@ -17,7 +17,7 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "8400887415"))
 ADMINS = [int(x) for x in os.environ.get("ADMINS", "774").split()]  # Default to owner ID
 
 # Channel Configuration
-PREMIUM_CHANNEL = "https://t.me/+W-Q51EuLf2QwYTl"
+PREMIUM_CHANNEL = "https://t.me/+yX6JavTNTE01NmRl"
 # Thumbnail Configuration
 THUMBNAILS = list(map(str, os.environ.get("THUMBNAILS", "https://i.fbcd.co/products/original/ug-logo-designs-2-acbfbf7b80e16df4c902a34d1caf148e7e1feca736e21075114990e62294f3ac.jpg").split()))
 
@@ -59,6 +59,7 @@ Please contact the admin @ItsUGBot to get access.</blockquote>""",
 
 <blockquote>Use format: {format}</blockquote>"""
 }
+
 
 
 
