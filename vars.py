@@ -2,9 +2,9 @@ import os
 from os import environ
 
 # API Configuration
-API_ID = int(os.environ.get("API_ID", "25405777"))
-API_HASH = os.environ.get("API_HASH", "6bff46327fffc7e03fa30a1ed19c5ce0")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8324823786:AAGPBfwH-EmmLmw3M-h9i4m5wqZ_pk1rFAQ")
+API_ID = int(os.environ.get("API_ID", ""))
+API_HASH = os.environ.get("API_HASH", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
 CREDIT = os.environ.get("CREDIT", "〱wahab▕")
 # MongoDB Configuration
@@ -59,6 +59,7 @@ Please contact the admin @ItsUGBot to get access.</blockquote>""",
 
 <blockquote>Use format: {format}</blockquote>"""
 }
+
 
 
 
