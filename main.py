@@ -685,15 +685,19 @@ async def txt_handler(bot: Client, m: Message):
             if "acecwply" in url:
                 cmd = f'yt-dlp -o "{name}.%(ext)s" -f "bestvideo[height<={raw_text2}]+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv --no-warning "{url}"'
 
-            elif "https://cpvideocdn.testbook.com/" in url or "https://cpvod.testbook.com/" in url:
-                url = url.replace("https://cpvideocdn.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = url.replace("https://cpvod.testbook.com/", "https://media-cdn.classplusapp.com/drm/")
-
-
-                url = apis["API_DRM"] + url
+            if "https://cpvod.testbook.com/" in url or "classplusapp.com/drm/" in url:
+                url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
+                url = f"https://cpapi-ytas.onrender.com/extract_keys?url={url}@bots_updatee&user_id={user_id}"
+                
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
+
+            elif "classplusapp" in url:
+                signed_api = f"https://cpapi-ytas.onrender.com/extract_keys?url={url}@bots_updatee&user_id=7517045929"
+                response = requests.get(signed_api, timeout=20)
+                url = response.text.strip()
+                url = response.json()['url']
             elif "https://static-trans-v1.classx.co.in" in url or "https://static-trans-v2.classx.co.in" in url:
                 base_with_params, signature = url.split("*")
 
